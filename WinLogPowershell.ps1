@@ -19,7 +19,7 @@ function WinLog($evtID,$EvType,$Head,$EventData){
         $id = New-Object System.Diagnostics.EventInstance($evtID,$Category,$EventType);
         $evtObject = New-Object System.Diagnostics.EventLog;
         $evtObject.Log = "Application";
-        $evtObject.Source = "ActiveDirectorySynchronization";
+        $evtObject.Source = $SourseName;
         $evtObject.WriteEvent($id, @($Head + $EventData))
     }
     catch {
